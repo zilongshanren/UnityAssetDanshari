@@ -17,6 +17,7 @@ namespace AssetDanshari
             public GUIContent assetReferenceReference = new GUIContent("引用目录", "使用到资源的预制文件夹路径");
             public GUIContent assetReferenceCheckDup = new GUIContent("检查重复");
             public GUIContent assetReferenceCheckRef = new GUIContent("引用查找");
+            public GUIContent assetReferenceCheckRefC = new GUIContent("引用其他AB");
             public GUIContent assetReferenceDepend = new GUIContent("被引用查找");
 
             public GUIContent duplicateTitle = new GUIContent("重复资源检查");

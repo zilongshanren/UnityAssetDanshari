@@ -134,7 +134,14 @@ namespace AssetDanshari
             }
 
             cellRect.xMin += 18f;
-            DefaultGUI.Label(cellRect, displayName, args.selected, args.focused);
+            if (Path.GetExtension(fileRelativePath).Contains("prefab"))
+            {
+                DefaultGUI.Label(cellRect, fileRelativePath.Substring(7) , args.selected, args.focused);
+            }
+            else
+            {
+                DefaultGUI.Label(cellRect, displayName , args.selected, args.focused);
+            }
             if (deleted || added)
             {
                 position.x = cellRect.xMax - 40f;

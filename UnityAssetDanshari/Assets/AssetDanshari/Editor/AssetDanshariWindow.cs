@@ -118,6 +118,8 @@ namespace AssetDanshari
             Rect rect3 = new Rect(rect) { x = rect2.x + rect2.width, width = rect.width - rect2.width - 150f };
             Rect rect4 = new Rect(rect) { x = rect3.x + rect3.width + 5f, width = 70f };
             Rect rect5 = new Rect(rect) { x = rect4.x + rect4.width + 5f, width = 70f };
+
+            Rect rect6 = new Rect(rect) { x = rect4.x + rect4.width + 5f, width = 70f };
             EditorGUI.LabelField(rect2, style.assetReferenceReference);
             info.referenceFolder = EditorGUI.TextField(rect3, info.referenceFolder);
             info.referenceFolder = OnDrawElementAcceptDrop(rect3, info.referenceFolder);
@@ -125,6 +127,12 @@ namespace AssetDanshari
             if (GUI.Button(rect4, style.assetReferenceCheckRef))
             {
                 AssetBaseWindow.CheckPaths<AssetReferenceWindow>(info.referenceFolder,
+                    info.assetFolder, info.assetCommonFolder);
+            }
+
+            if (GUI.Button(rect6, style.assetReferenceCheckRefC))
+            {
+                AssetBaseWindow.CheckPaths<CAssetReferenceWindow>(info.referenceFolder,
                     info.assetFolder, info.assetCommonFolder);
             }
 
